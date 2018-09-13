@@ -44,6 +44,19 @@ public class Gyakorlas_12dv_20180913 {
         System.out.println("Az átlag: "+ átlag);
         System.out.format("Az átlag: %.2f\n", átlag);
         System.out.println("----->");
+        maxHely=0;
+        for(int i=0; i< mérések.length-1; i++){
+            double maxDiff = Math.abs(mérések[maxHely + 1] - mérések[maxHely]);
+            double aktDiff = Math.abs(mérések[i + 1] - mérések[i]);
+            if(aktDiff > maxDiff)
+                maxHely = i;
+        }
+        System.out.println("A max különbség a "+(maxHely +1)+". nap és a "+(maxHely+2)+". nap között van");
+        darab = 0;
+        for(String név : törpék)
+            if(név.toUpperCase().contains("T"))
+                darab++;
+        System.out.println(darab+ " név tartalmaz t karaktert.");
     }
     
 }
